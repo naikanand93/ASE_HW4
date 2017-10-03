@@ -40,3 +40,6 @@ def saveData():
 	#save data to db
 	return "Hello World!"
 	#return data & id generated in db.
+
+def test_check():
+	assert 1==1
