@@ -20,7 +20,7 @@ def hello():
 def getAllUsers():
 	# Confirm how to get the list of users
 	mongo_query = mongo_mlab.db.active_users.find()
-	print mongo_query
+	print(mongo_query)
 
 	users_list = []
 
@@ -36,6 +36,7 @@ def getAllUsers():
 @app.route("/save", methods=['GET', 'POST'])
 def saveData():
 	data = request.get_data()
+
 	list_response = data.split('&')
 
 	first_name = list_response[0].split('=')[1]
@@ -53,3 +54,6 @@ def saveData():
 
 	return "Saved with id: ", docid
 	#return data & id generated in db.
+
+def test_check():
+	assert 1==1
