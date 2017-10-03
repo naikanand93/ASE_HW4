@@ -36,7 +36,20 @@ def getAllUsers():
 @app.route("/save", methods=['GET', 'POST'])
 def saveData():
 	data = request.get_data()
-	print(data)
-	#save data to db
-	return "Hello World!"
+	list_response = data.split('&')
+
+	first_name = list_response[0].split('=')[1]
+	last_name = list_response[1].split('=')[1]
+	likes = list_response[2].split('=')[1]
+
+	print first_name, last_name, likes
+	#print list_response[1], list_response[3], list_response[5]
+
+	docid = mongo_mlab.db.active_users.insert({
+			'first_name': first_name, 
+			'last_name': last_name,
+			'likes': likes
+			})
+
+	return "Saved with id: ", docid
 	#return data & id generated in db.
