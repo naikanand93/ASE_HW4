@@ -20,7 +20,7 @@ def hello():
 def getAllUsers():
 	# Confirm how to get the list of users
 	mongo_query = mongo_mlab.db.active_users.find()
-	print mongo_query
+	print(mongo_query)
 
 	users_list = []
 
