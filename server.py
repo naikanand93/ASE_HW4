@@ -55,5 +55,3 @@ def saveData():
 	return "Saved with id: ", docid
 	#return data & id generated in db.
 
-def test_saveData():
-	assert 1==1
